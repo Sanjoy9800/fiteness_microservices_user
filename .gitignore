@@ -48,7 +48,7 @@ nbdist/
 .nb-gradle/
 
 # ===== Environment / secrets =====
-.env
+userservice/.env
 .env.*
 *.local
 application-local.yaml

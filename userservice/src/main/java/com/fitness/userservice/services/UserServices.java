@@ -34,4 +34,18 @@ public class UserServices {
         userResponse.setUpdatedAt(saveUser.getUpdatedAt());
         return userResponse;
     }
+
+    public UserResponse getUserById(String userId) {
+        User user = repository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        UserResponse response = new UserResponse();
+        response.setId(user.getId());
+        response.setEmail(user.getEmail());
+        response.setFirstName(user.getFirstName());
+        response.setLastName(user.getLastName());
+        response.setCreatedAt(user.getCreatedAt());
+        response.setUpdatedAt(user.getUpdatedAt());
+        return response;
+    }
 }
